@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://brw2oe1iwhjs3"]
+[gd_scene load_steps=31 format=3 uid="uid://brw2oe1iwhjs3"]
 
 [ext_resource type="Script" uid="uid://erjicbtda6f0" path="res://Scripts/Player/PlayerMovement.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://brt2diyvwvrby" path="res://Scenes/fireball.tscn" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://d4f1s3uyhnkla" path="res://Assests/Sprites/Borrowed/PlayerSprite02.png" id="2_cvnsp"]
-[ext_resource type="Script" uid="uid://crvnpw6sk3jce" path="res://Scenes/PlayerCamera.gd" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tx1dd"]
 radius = 100.0
@@ -241,9 +241,28 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_cvnsp"]
+script/source = "extends Camera2D
+
+
+
+#func _ready():
+#	var window_size = get_viewport().size
+#	var base_res = Vector2(320, 180)
+#	var scale = window_size / base_res
+#	camera.zoom = Vector2(1 / scale.x, 1 / scale.y)
+
+
+
+#func _physics_process(_delta):
+#	position = position.round()
+"
+
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1, 0.994149)
 collision_mask = 2147483649
 script = ExtResource("1_cvnsp")
+FireballScene = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -263,4 +282,4 @@ zoom = Vector2(1.8, 1.8)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
-script = ExtResource("3_6t5aa")
+script = SubResource("GDScript_cvnsp")

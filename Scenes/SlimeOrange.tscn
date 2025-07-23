@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://ck8sdhd05jlsy"]
+[gd_scene load_steps=25 format=3 uid="uid://ck8sdhd05jlsy"]
 
 [ext_resource type="Script" uid="uid://by2ajqp4lgmnn" path="res://Slime.gd" id="1_y2qvw"]
 [ext_resource type="Texture2D" uid="uid://bpqujqcau64h" path="res://Assests/Sprites/Borrowed/Slime.png" id="2_5tb0m"]
+[ext_resource type="PackedScene" uid="uid://dp3dms16jm4jx" path="res://health_bar.tscn" id="3_5tb0m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opvwa"]
 radius = 7.0
@@ -214,5 +215,9 @@ sprite_frames = SubResource("SpriteFrames_s4tia")
 animation = &"IdleDown"
 frame_progress = 0.385011
 offset = Vector2(0, -18)
+
+[node name="HealthBar" parent="." instance=ExtResource("3_5tb0m")]
+offset_top = -25.0
+offset_bottom = -21.0
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

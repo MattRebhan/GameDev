@@ -7,6 +7,11 @@ extends CharacterBody2D
 @export var attack_range := 50.0
 @export var back_off_range := 49.0
 @export var disengage_range := 300.0
+@onready var Health := $HealthBar  # or get_node("HealthBar")
+@export var max_health := 50
+
+
+
 
 @onready var slime_anim := $AnimatedSprite2D
 
@@ -15,7 +20,7 @@ var distance_to_player = 0.0
 var bounce_timer := 0.0
 var bounce_direction := Vector2.ZERO
 var last_direction := Vector2.DOWN
-
+var current_health := max_health
 
 func _physics_process(delta):
 	if target == null:
@@ -46,6 +51,19 @@ func _physics_process(delta):
 
 	move_and_slide()
 	update_animation()
+
+func take_damage(amount: int):
+	current_health -= amount
+	current_health = clamp(current_health, 0, max_health)  # Avoid negatives
+
+	# Update the progress bar
+	Health.value = current_health
+
+	# Optional: check if slime should die
+	if current_health <= 0:
+		queue_free()  # Destroys the slime node
+
+
 
 
 func update_animation():

@@ -26,3 +26,39 @@ position = Vector2(73, -106)
 
 [node name="SlimeOrange4" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
 position = Vector2(147, -75)
+
+[node name="SlimeOrange5" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-80, -288)
+
+[node name="SlimeOrange6" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-6, -257)
+
+[node name="SlimeOrange7" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-184, -281)
+
+[node name="SlimeOrange8" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-110, -250)
+
+[node name="SlimeOrange9" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(189, -331)
+
+[node name="SlimeOrange10" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(263, -300)
+
+[node name="SlimeOrange11" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(85, -324)
+
+[node name="SlimeOrange12" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(159, -293)
+
+[node name="SlimeOrange13" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-423, -243)
+
+[node name="SlimeOrange14" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-349, -212)
+
+[node name="SlimeOrange15" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-527, -236)
+
+[node name="SlimeOrange16" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+position = Vector2(-453, -205)
