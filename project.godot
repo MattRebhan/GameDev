@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="StarBerk"
-run/main_scene="uid://cwm8k8h4nvcsx"
+run/main_scene="uid://bbm75m07nknjm"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

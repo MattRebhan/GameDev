@@ -1,64 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwm8k8h4nvcsx"]
+[gd_scene load_steps=5 format=3 uid="uid://cwm8k8h4nvcsx"]
 
 [ext_resource type="PackedScene" uid="uid://brw2oe1iwhjs3" path="res://Scenes/player.tscn" id="1_ebmjs"]
-[ext_resource type="PackedScene" uid="uid://de2pqmat0klh3" path="res://StartingArea.tscn" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://cdtxcqxlecmvw" path="res://Scenes/StartingArea.tscn" id="1_wrm1d"]
+[ext_resource type="Script" uid="uid://cc7st8u5clebr" path="res://Scenes/PlayerCamera.gd" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://ck8sdhd05jlsy" path="res://Scenes/SlimeOrange.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D"]
+texture_filter = 1
 
 [node name="Background" parent="." instance=ExtResource("1_wrm1d")]
+texture_filter = 1
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 z_as_relative = false
 y_sort_enabled = true
 
 [node name="Player" parent="CanvasGroup" instance=ExtResource("1_ebmjs")]
+texture_filter = 1
 position = Vector2(-4, 11)
 
 [node name="SlimeOrange" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
+texture_filter = 1
 position = Vector2(177, -113)
 
-[node name="SlimeOrange2" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(251, -82)
-
-[node name="SlimeOrange3" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(73, -106)
-
-[node name="SlimeOrange4" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(147, -75)
-
-[node name="SlimeOrange5" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-80, -288)
-
-[node name="SlimeOrange6" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-6, -257)
-
-[node name="SlimeOrange7" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-184, -281)
-
-[node name="SlimeOrange8" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-110, -250)
-
-[node name="SlimeOrange9" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(189, -331)
-
-[node name="SlimeOrange10" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(263, -300)
-
-[node name="SlimeOrange11" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(85, -324)
-
-[node name="SlimeOrange12" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(159, -293)
-
-[node name="SlimeOrange13" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-423, -243)
-
-[node name="SlimeOrange14" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-349, -212)
-
-[node name="SlimeOrange15" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-527, -236)
-
-[node name="SlimeOrange16" parent="CanvasGroup" instance=ExtResource("2_qxrlw")]
-position = Vector2(-453, -205)
+[node name="Camera2D" type="Camera2D" parent="CanvasGroup"]
+texture_filter = 1
+zoom = Vector2(1.8, 1.8)
+script = ExtResource("2_3dryh")

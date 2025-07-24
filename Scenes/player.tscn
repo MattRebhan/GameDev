@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://brw2oe1iwhjs3"]
+[gd_scene load_steps=30 format=3 uid="uid://brw2oe1iwhjs3"]
 
 [ext_resource type="Script" uid="uid://erjicbtda6f0" path="res://Scripts/Player/PlayerMovement.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://brt2diyvwvrby" path="res://Scenes/fireball.tscn" id="2_6t5aa"]
@@ -241,23 +241,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_cvnsp"]
-script/source = "extends Camera2D
-
-
-
-#func _ready():
-#	var window_size = get_viewport().size
-#	var base_res = Vector2(320, 180)
-#	var scale = window_size / base_res
-#	camera.zoom = Vector2(1 / scale.x, 1 / scale.y)
-
-
-
-#func _physics_process(_delta):
-#	position = position.round()
-"
-
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1, 0.994149)
 collision_mask = 2147483649
@@ -275,11 +258,3 @@ sprite_frames = SubResource("SpriteFrames_fs7ks")
 animation = &"WalkDown"
 frame = 5
 frame_progress = 0.520288
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(6, -11)
-zoom = Vector2(1.8, 1.8)
-process_callback = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-script = SubResource("GDScript_cvnsp")
